@@ -1,7 +1,18 @@
 [package]
 name = "todoist_rest"
-version = "0.1.0"
+version = "0.0.1-dev"
 authors = ["Dewey Vozel <dewey@vozel.net>"]
+license = "MIT"
+description = "A library wrapping the Todoist REST API."
+documentation = "https://github.com/vozeldr/todoist_rest"
+homepage = "https://github.com/vozeldr/todoist_rest"
+repository = "https://github.com/vozeldr/todoist_rest.git"
+readme = "README.md"
+keywords = ["Todo", "Task", "Project", "Todoist", "REST"]
+categories = ["data-structures", "web-programming::http-client"]
+
+[badges]
+maintenance = { status = "experimental" }
 
 [dependencies]
 reqwest = "0.8.2"

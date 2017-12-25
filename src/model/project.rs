@@ -1,3 +1,8 @@
+//! # Project
+//!
+//! Module containing project-related structures and utilities.
+
+/// Data model for a project that tasks can be grouped into.
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Project {
     /// Project identifier
@@ -13,6 +18,7 @@ pub struct Project {
 }
 
 impl Project {
+    /// Creates a new project with the given name.
     pub fn create(name: &str) -> Project {
         Project {
             id: None,
@@ -41,5 +47,39 @@ impl Project {
 
     pub fn comment_count(&self) -> &Option<u32> {
         &self.comment_count
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    extern crate serde_json;
+    use model::project::Project;
+
+    #[test]
+    fn create_and_serialize_project() {
+        let new_project = Project::create("Test Project");
+        let json = serde_json::to_string(&new_project).unwrap();
+        println!("{}", json);
+        assert!(json.contains("\"name\":\"Test Project\""));
+    }
+
+    #[test]
+    fn deserialize_project() {
+        let json = r#"
+            {
+                "id": 1234,
+                "name": "Movies to watch",
+                "comment_count": 0,
+                "order": 1,
+                "indent": 1
+            }
+        "#;
+
+        let project: Project = serde_json::from_str(json).unwrap();
+        assert_eq!(project.name(), "Movies to watch");
+        assert_eq!(project.id().unwrap(), 1234);
+        assert_eq!(project.comment_count().unwrap(), 0);
+        assert_eq!(project.order().unwrap(), 1);
+        assert_eq!(project.indent().unwrap(), 1);
     }
 }
