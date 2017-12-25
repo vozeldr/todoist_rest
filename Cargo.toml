@@ -1,0 +1,6 @@
+[package]
+name = "todoist_rest"
+version = "0.1.0"
+authors = ["Dewey Vozel <dewey@vozel.net>"]
+
+[dependencies]
