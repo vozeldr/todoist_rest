@@ -4,3 +4,8 @@ version = "0.1.0"
 authors = ["Dewey Vozel <dewey@vozel.net>"]
 
 [dependencies]
+reqwest = "0.8.2"
+serde = "1.0.25"
+serde_json = "1.0.8"
+serde_derive = "1.0.25"
+uuid = "0.5.1"
