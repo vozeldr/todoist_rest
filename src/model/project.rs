@@ -29,22 +29,31 @@ impl Project {
         }
     }
 
+    pub fn set_name(&mut self, name: &str) {
+        self.name = String::from(name);
+    }
+
+    /// Gets the project name.
     pub fn name(&self) -> &str {
         &self.name
     }
 
+    /// Gets the project identifier.
     pub fn id(&self) -> &Option<u32> {
         &self.id
     }
 
+    /// Gets the order to display the project within the list of projects.
     pub fn order(&self) -> &Option<u32> {
         &self.order
     }
 
+    /// Gets the indentation level (1 to 4) of the project in the list of projects.
     pub fn indent(&self) -> &Option<u32> {
         &self.indent
     }
 
+    /// Gets the number of comments associated with the project.
     pub fn comment_count(&self) -> &Option<u32> {
         &self.comment_count
     }

@@ -1,6 +1,6 @@
 [package]
 name = "todoist_rest"
-version = "0.0.2-dev"
+version = "0.0.3-dev"
 authors = ["Dewey Vozel <dewey@vozel.net>"]
 license = "MIT"
 description = "A library wrapping the Todoist REST API."
